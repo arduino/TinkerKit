@@ -107,11 +107,6 @@ public:
   inline boolean released() { return Esplora.buttonReleased(_pin); }
 };
 
-extern class TKEsploraButton downButton;
-extern class TKEsploraButton upButton;
-extern class TKEsploraButton leftButton;
-extern class TKEsploraButton rightButton;
-
 /*
  * Tilt Sensor Class and Methods
  */
@@ -338,6 +333,16 @@ class TKAccelerometer
 		const static float _gain = 1.414;
 		const static int _zeroOffset = 478;
 };
+
+/*
+ * Esplora builtin peripherals
+ */
+
+extern class TKEsploraButton downButton;
+extern class TKEsploraButton upButton;
+extern class TKEsploraButton leftButton;
+extern class TKEsploraButton rightButton;
+
 
 #endif
 
