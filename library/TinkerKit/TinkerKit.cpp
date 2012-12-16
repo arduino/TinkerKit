@@ -74,8 +74,8 @@ boolean TKButton::held()
 }
 
 TKEsploraButton::TKEsploraButton(uint8_t pin)
+  : TKButton(pin)
 {
-  _pin = pin;
 }
 
 TKEsploraButton downButton(SWITCH_DOWN);

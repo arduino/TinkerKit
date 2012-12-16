@@ -96,7 +96,7 @@ class TKButton
 		void update();
 };
 
-class TKEsploraButton
+class TKEsploraButton : public TKButton
 {
 public:
   TKEsploraButton(uint8_t pin);
@@ -105,9 +105,6 @@ public:
   inline boolean toggle() { return Esplora.buttonToggled(_pin); }
   inline boolean pressed() { return Esplora.buttonPressed(_pin); }
   inline boolean released() { return Esplora.buttonReleased(_pin); }
-
-  protected:
-    uint8_t _pin;
 };
 
 extern class TKEsploraButton downButton;
