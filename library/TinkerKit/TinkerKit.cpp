@@ -263,3 +263,5 @@ TKLed greenLed(GREEN_PIN);
 TKLed blueLed(BLUE_PIN);
 
 TKEsploraPotentiometer potentiometer(CH_SLIDER);
+
+TKJoystick joystick(CH_JOYSTICK_X, CH_JOYSTICK_Y);

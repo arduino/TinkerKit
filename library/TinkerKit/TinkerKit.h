@@ -418,6 +418,10 @@ extern class TKEsploraPotentiometer potentiometer;
 extern class TKEsploraLightSensor lightSensor;
 
 extern class TKEsploraTemperatureSensor tempSensor;
+
+extern class TKJoystick joystick;
+
+
 #if defined ESPLORA_H_
 #undef digitalRead
 #undef analogRead
