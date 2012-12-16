@@ -67,6 +67,39 @@
 #define SOUTH 0	// south pole: used in TKHallSensor
 
 
+#if defined ESPLORA_H_
+/*
+ * Arduino Esplora has no user-serviceable analog inputs;
+ * it has a multiplexer that connects to 16 analog
+ * or digital peripherals. Two of them are connectors
+ * to external peripherals.
+ * In order to use those peripherals in a consistent
+ * way, the following macros will redirect the
+ * analogRead and digitalRead functions to Esplora.
+ * readChannel().
+ * In order to make this effective, all occurrences of
+ * digital/analogRead MUST be in this file and not in
+ * the .cpp.
+ * The original semantics of these two functions are
+ * restored at the end of this file.
+ */
+#define digitalRead(pin) Esplora.readChannel(pin)
+#define analogRead(pin) Esplora.readChannel(pin)
+
+/*
+ * Output connectors (wired directly to ATmega -- input
+ * objects won't work because of the above redirect
+ */
+#define OUT_A 3
+#define OUT_B 11
+
+/*
+ * Input connectors (wired to the multiplexer)
+ */
+#define IN_A 8
+#define IN_B 9
+
+#endif
 /* 
 -----------------------------------------------------------------------------
                         TinkerKit modules Classes
@@ -385,6 +418,12 @@ extern class TKEsploraPotentiometer potentiometer;
 extern class TKEsploraLightSensor lightSensor;
 
 extern class TKEsploraTemperatureSensor tempSensor;
+#if defined ESPLORA_H_
+#undef digitalRead
+#undef analogRead
+#endif
+
+
 #endif
 
 
