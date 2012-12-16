@@ -195,6 +195,15 @@ class TKLightSensor
 		uint8_t _pin;
 };
 
+class TKEsploraLightSensor : public TKLightSensor
+{
+  public:
+    TKEsploraLightSensor(uint8_t pin) : 
+      TKLightSensor(pin) { };
+    inline int get() { return Esplora.readLightSensor(); }
+};
+  
+
 /*
  * Thermistor Class and Methods
  */
@@ -355,6 +364,8 @@ extern class TKLed greenLed;
 extern class TKLed blueLed;
 
 extern class TKEsploraPotentiometer potentiometer;
+
+extern class TKEsploraLightSensor lightSensor;
 
 #endif
 
