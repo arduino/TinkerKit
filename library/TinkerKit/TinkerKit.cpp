@@ -261,3 +261,5 @@ TKEsploraButton rightButton(SWITCH_RIGHT);
 TKLed redLed(RED_PIN);
 TKLed greenLed(GREEN_PIN);
 TKLed blueLed(BLUE_PIN);
+
+TKEsploraPotentiometer potentiometer(CH_SLIDER);

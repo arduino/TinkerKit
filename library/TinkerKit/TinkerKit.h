@@ -174,6 +174,13 @@ class TKPotentiometer
 };
 
 
+class TKEsploraPotentiometer : public TKPotentiometer
+{
+public:
+  TKEsploraPotentiometer(uint8_t pin) : TKPotentiometer(pin) { };
+  inline int get() { return Esplora.readSlider(); }
+};
+
 /*
  * LightSensor Class and Methods
  */
@@ -346,6 +353,8 @@ extern class TKEsploraButton rightButton;
 extern class TKLed redLed;
 extern class TKLed greenLed;
 extern class TKLed blueLed;
+
+extern class TKEsploraPotentiometer potentiometer;
 
 #endif
 
