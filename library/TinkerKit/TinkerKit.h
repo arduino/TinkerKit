@@ -343,6 +343,9 @@ extern class TKEsploraButton upButton;
 extern class TKEsploraButton leftButton;
 extern class TKEsploraButton rightButton;
 
+extern class TKLed redLed;
+extern class TKLed greenLed;
+extern class TKLed blueLed;
 
 #endif
 

@@ -258,3 +258,6 @@ TKEsploraButton upButton(SWITCH_UP);
 TKEsploraButton leftButton(SWITCH_LEFT);
 TKEsploraButton rightButton(SWITCH_RIGHT);
 
+TKLed redLed(RED_PIN);
+TKLed greenLed(GREEN_PIN);
+TKLed blueLed(BLUE_PIN);
