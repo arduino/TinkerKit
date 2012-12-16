@@ -225,6 +225,23 @@ class TKThermistor
 		const static float Ginf = 120.6685;	// Ginf = 1/Rinf
 														// Rinf = R0*e^(-Beta/T0) = 4700*e^(-3950/298.15)
 };	
+
+class TKEsploraTemperatureSensor : public TKThermistor 
+{
+  public:
+    TKEsploraTemperatureSensor(uint8_t pin) 
+      : TKThermistor(pin) { };
+    inline int get() { return Esplora.readTemperature(DEGREES_C); }
+    float getCelsius() {
+      // float version of _Esplora::readTemperature
+      return (Esplora.readChannel(CH_TEMPERATURE) * 500.0 / 1024) - 50;
+    };
+    float getFahrenheit() {
+      return (Esplora.readChannel(CH_TEMPERATURE) * 450.0 / 512) - 58;
+    };
+};  
+
+
 		
 /*
  * MosFet Class and Methods
@@ -367,6 +384,7 @@ extern class TKEsploraPotentiometer potentiometer;
 
 extern class TKEsploraLightSensor lightSensor;
 
+extern class TKEsploraTemperatureSensor tempSensor;
 #endif
 
 
