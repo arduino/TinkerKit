@@ -28,6 +28,7 @@
 #ifndef TinkerKit_h
 #define TinkerKit_h
 
+#include <Esplora.h>
 
 // Minimum Analog In/Out that each platform have
 #define I0 A0
@@ -95,6 +96,24 @@ class TKButton
 		void update();
 };
 
+class TKEsploraButton
+{
+public:
+  TKEsploraButton(uint8_t pin);
+  
+  inline boolean get() { return !Esplora.readButton(_pin); }
+  inline boolean toggle() { return Esplora.buttonToggled(_pin); }
+  inline boolean pressed() { return Esplora.buttonPressed(_pin); }
+  inline boolean released() { return Esplora.buttonReleased(_pin); }
+
+  protected:
+    uint8_t _pin;
+};
+
+extern class TKEsploraButton downButton;
+extern class TKEsploraButton upButton;
+extern class TKEsploraButton leftButton;
+extern class TKEsploraButton rightButton;
 
 /*
  * Tilt Sensor Class and Methods

@@ -72,7 +72,18 @@ boolean TKButton::held()
 	else
 		return false;
 }
-	
+
+TKEsploraButton::TKEsploraButton(uint8_t pin)
+{
+  _pin = pin;
+}
+
+TKEsploraButton downButton(SWITCH_DOWN);
+TKEsploraButton upButton(SWITCH_UP);
+TKEsploraButton leftButton(SWITCH_LEFT);
+TKEsploraButton rightButton(SWITCH_RIGHT);
+
+
 	
 /*
  * Tilt Sensor Class and Methods
